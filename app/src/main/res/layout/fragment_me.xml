@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.meFragment"
+    android:orientation="vertical"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimary"
+    >
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/user"
+        android:layout_margin="15dp"
+        android:scaleType="fitCenter"
+        app:riv_corner_radius="30dip"
+        app:riv_mutate_background="true"
+        app:riv_tile_mode="repeat"
+        app:riv_oval="true" />
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好,"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        />
+
+</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rlyt_order"
+        style="@style/mineItemStyle"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_order"
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/dingdan"
+            android:text="我的订单" />
+
+        <ImageView
+            style="@style/mineItemImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlyt_bm"
+        style="@style/mineItemStyle"
+        >
+
+        <TextView
+            android:id="@+id/tv_bm"
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/guanlian"
+            android:text="我要报名" />
+
+        <ImageView
+            style="@style/mineItemImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

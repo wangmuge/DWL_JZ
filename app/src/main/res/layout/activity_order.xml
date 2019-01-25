@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderActivity"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/main"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_back" />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="下单"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="50dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/fuwu"
+            android:text="服务名称" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="121212"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlyt"
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="105dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_bm"
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/jiage"
+            android:text="服务单价" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/orangered"
+            android:text="121212"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlyt_time"
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="160dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_time"
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/shijian"
+            android:text="选择服务" />
+
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/nice_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlyt_time2"
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="215dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/shijian_2"
+            android:text="选择预约时间" />
+
+        <TextView
+            android:id="@+id/tv_time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="选择时间"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="270dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/xingming"
+            android:text="姓名" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:hint="填写姓名"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="325dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/shouji"
+            android:text="手机号" />
+
+        <EditText
+            android:id="@+id/et_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:hint="填写手机号"
+            android:background="@null"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="430dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/shijian_2"
+            android:text="选择地址" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="选择地址"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="380dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/position"
+            android:text="填写地址" />
+
+
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/edt_order_note_text"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="430dp"
+        android:padding="5dp"
+        android:minLines="5"
+        android:gravity="top"
+        android:background="@drawable/note_bg"
+        android:textColor="@color/black"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:hint="请输入地址"
+        android:textSize="14sp"/>
+    <RelativeLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:text="12333"
+            android:textColor="@color/orangered"
+            />
+        <Button
+            android:id="@+id/btn_go"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimary"
+            android:text="下单"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+</RelativeLayout>
