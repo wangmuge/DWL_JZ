@@ -35,8 +35,8 @@ public class OrderListActivity extends BaseActivity {
     }
 
     private void initData() {
-        if (getOrder("1") != null && !getOrder("1").equals("")) {
-            List<Order> list = JSONObject.parseArray(getOrder("1"), Order.class);
+        if (getOrder(getUsername()) != null && !getOrder(getUsername()).equals("")) {
+            List<Order> list = JSONObject.parseArray(getOrder(getUsername()), Order.class);
 //            System.out.println("jiage" + list.get(1).getPrice().toString());
             Collections.reverse(list);
             LinearLayoutManager layoutmanager = new LinearLayoutManager(this);

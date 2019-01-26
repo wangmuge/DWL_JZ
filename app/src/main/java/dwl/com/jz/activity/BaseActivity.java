@@ -94,15 +94,24 @@ public abstract class BaseActivity extends AppCompatActivity  {
     }
 
 
-    public String getEditTextValue(EditText editText) {
-        return editText.getText().toString();
-    }
-
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         if (newConfig.fontScale != 1)//非默认值
             getResources();
         super.onConfigurationChanged(newConfig);
+    }
+    public void setSign(String name,String sign) {
+        SharedPreferences sp = getSharedPreferences("sign",
+                Context.MODE_PRIVATE);
+        sp.edit().putString(name, sign).commit();
+
+    }
+    public String getSign(String name) {
+        SharedPreferences sp = getSharedPreferences("sign",
+                Context.MODE_PRIVATE);
+        String num = sp.getString(name,null);
+        return num;
+
     }
 
     public void setUser(String name,String psw) {
@@ -118,14 +127,27 @@ public abstract class BaseActivity extends AppCompatActivity  {
         return num;
 
     }
+    public void setUsername(String name) {
+        SharedPreferences sp = getSharedPreferences("username",
+                Context.MODE_PRIVATE);
+        sp.edit().putString("username", name).commit();
+
+    }
+    public String getUsername() {
+        SharedPreferences sp = getSharedPreferences("username",
+                Context.MODE_PRIVATE);
+        String num = sp.getString("username",null);
+        return num;
+
+    }
     public void setOrder(String name,String order) {
-        SharedPreferences sp = getSharedPreferences("order",
+        SharedPreferences sp = getSharedPreferences("order_"+name,
                 Context.MODE_PRIVATE);
         sp.edit().putString(name, order).commit();
 
     }
     public String getOrder(String name) {
-        SharedPreferences sp = getSharedPreferences("order",
+        SharedPreferences sp = getSharedPreferences("order_"+name,
                 Context.MODE_PRIVATE);
         String num = sp.getString(name,null);
         return num;

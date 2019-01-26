@@ -118,9 +118,9 @@ public class OrderActivity extends BaseActivity {
     @OnClick(R.id.btn_go)
     public void onViewClickedOrder() {
         JSONArray list = null;
-        if (getOrder("1") != null && !getOrder("1").equals("")) {
+        if (getOrder(getUsername()) != null && !getOrder(getUsername()).equals("")) {
             try {
-                list = new JSONArray(getOrder("1"));
+                list = new JSONArray(getOrder(getUsername()));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -152,7 +152,7 @@ public class OrderActivity extends BaseActivity {
             object.put("mobile",etMobile.getText().toString().trim());
             object.put("address", et_address.getText().toString().trim());
             list.put(object);
-            setOrder("1", list.toString());
+            setOrder(getUsername(), list.toString());
             System.out.println(list.toString());
             new SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
                     .setTitleText("下单成功！")

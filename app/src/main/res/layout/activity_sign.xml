@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llyt_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/main"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_back" />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="我要报名"
+            />
+    </RelativeLayout>
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/header"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="30dip"
+        app:riv_mutate_background="true"
+        app:riv_tile_mode="repeat"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        app:riv_oval="true" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:hint="姓名"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/et_sex"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:hint="性别"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+    <EditText
+        android:id="@+id/et_mobile"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:hint="手机号"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+    <EditText
+        android:id="@+id/et_age"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:hint="年龄"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+    <EditText
+        android:id="@+id/et_hometown"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:hint="您的家乡"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+    <EditText
+        android:id="@+id/et_city"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:hint="意向城市"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+    <EditText
+        android:id="@+id/et_type"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:hint="报名意向"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_login_btn"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="提交"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderActivity"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/main"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_back" />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="报名详情"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="50dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/fuwu"
+            android:text="姓名" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlyt"
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="101dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/sex_man"
+            android:text="性别" />
+
+        <TextView
+            android:id="@+id/tv_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="152dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/shouji"
+            android:text="手机号" />
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="203dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/nianling"
+            android:text="年龄" />
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="254dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/home"
+            android:text="您的家乡" />
+
+        <TextView
+            android:id="@+id/tv_hometown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="305dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/citychurch"
+            android:text="意向城市" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/mineItemStyle2"
+        android:layout_marginTop="356dp"
+        >
+
+        <TextView
+            style="@style/mineItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawableLeft="@mipmap/zhiyeyixiang"
+            android:text="报名意向" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+
+            />
+    </RelativeLayout>
+</RelativeLayout>

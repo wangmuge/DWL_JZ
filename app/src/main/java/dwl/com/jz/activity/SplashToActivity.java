@@ -27,7 +27,7 @@ public class SplashToActivity extends BaseActivity {
             @Override
             public void run() {
 
-                startActivity(new Intent(SplashToActivity.this, MainActivity.class));
+                startActivity(new Intent(SplashToActivity.this, LoginActivity.class));
                 finish();
             }
         }, time);
