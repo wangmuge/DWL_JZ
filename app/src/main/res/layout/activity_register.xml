@@ -55,7 +55,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/shape_login"
             android:gravity="center"
-            android:hint="账号"
+            android:hint="用户名"
             android:singleLine="true"
             android:textColorHint="@color/white"
             android:textSize="14sp" />
@@ -73,6 +73,19 @@
             android:singleLine="true"
             android:textColorHint="@color/white"
             android:textSize="14sp" />
+    <EditText
+        android:id="@+id/et_password2"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:hint="重复密码"
+        android:inputType="textWebPassword"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textSize="14sp" />
         <TextView
             android:id="@+id/tv_reg"
             android:layout_width="300dp"
