@@ -41,6 +41,10 @@ public class RegisterActivity extends BaseActivity {
                         showToast("用户名要以字母开头，只能包括字母,下划线,数字，长度必须在6到10之间");
                         return;
                     }
+                    if(psw.length()<6 ||psw2.length()<6){
+                        showToast("密码要6位以上！");
+                        return;
+                    }
                     if (!psw.equals(psw2)) {
                         showToast("密码不一致，请重新输入！");
                         return;
