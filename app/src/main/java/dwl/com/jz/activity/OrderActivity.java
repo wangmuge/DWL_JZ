@@ -58,7 +58,7 @@ public class OrderActivity extends BaseActivity {
     private String price;
     private int img;
     private int total;
-    private String time = "随时";
+    private String time = "";
     List<String> dataset = new LinkedList<>(Arrays.asList("一小时", "两小时", "三小时", "四小时", "五小时", "六小时"));
     List<String> dataset2 = new LinkedList<>(Arrays.asList("一个月", "两个月", "三个月", "四个月", "五个月", "六个月"));
     List<String> dataset3 = new LinkedList<>(Arrays.asList("一台", "两台", "三台", "四台", "五台", "六台"));
@@ -82,6 +82,7 @@ public class OrderActivity extends BaseActivity {
         tvTotal.setText("总价：" + price + "元");
         tvTitle.setText(title);
         tvPrice.setText("￥" + price);
+//        tvTime2.setText("随时");
         if (Integer.parseInt(price) >= 1000) {
             niceSpinner.attachDataSource(dataset2);
         } else {
@@ -117,54 +118,68 @@ public class OrderActivity extends BaseActivity {
 
     @OnClick(R.id.btn_go)
     public void onViewClickedOrder() {
-        JSONArray list = null;
-        if (getOrder(getUsername()) != null && !getOrder(getUsername()).equals("")) {
-            try {
-                list = new JSONArray(getOrder(getUsername()));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        } else {
-            list = new JSONArray();
-        }
-        JSONObject object = new JSONObject();
-        try {
-            object.put("img", img);
-            object.put("title", title);
-            object.put("price", price);
-            object.put("total", total);
-            if (Integer.parseInt(price) >= 1000) {
-                object.put("time", dataset2.get(niceSpinner.getSelectedIndex()));
-            } else {
-                if(title.contains("维修")){
-                    object.put("time", dataset3.get(niceSpinner.getSelectedIndex()));
-                }else if(title.contains("搬")){
-                    object.put("time", dataset4.get(niceSpinner.getSelectedIndex()));
-                }else if(title.contains("锁")){
-                    object.put("time", dataset5.get(niceSpinner.getSelectedIndex()));
-                }else{
-                    object.put("time", dataset.get(niceSpinner.getSelectedIndex()));
+        if(time.equals("") || time == null){
+            showToast("请选择时间！");
+            return;
+        }else if(etName.getText().toString().equals("")){
+            showToast("姓名不能为空！");
+            return;
+        }else if(etMobile.getText().toString().equals("")){
+            showToast("手机号不能为空！");
+            return;
+        }else if(et_address.getText().toString().equals("")){
+            showToast("地址不能为空");
+            return;
+        }else {
+            JSONArray list = null;
+            if (getOrder(getUsername()) != null && !getOrder(getUsername()).equals("")) {
+                try {
+                    list = new JSONArray(getOrder(getUsername()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-
+            } else {
+                list = new JSONArray();
             }
-            object.put("time2",time);
-            object.put("name",etName.getText().toString().trim());
-            object.put("mobile",etMobile.getText().toString().trim());
-            object.put("address", et_address.getText().toString().trim());
-            list.put(object);
-            setOrder(getUsername(), list.toString());
-            System.out.println(list.toString());
-            new SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
-                    .setTitleText("下单成功！")
-                    .setConfirmText("查看订单")
-                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            toActivity(OrderListActivity.class, null);
-                        }
-                    })
-                    .show();
-        } catch (Exception e) {
+            JSONObject object = new JSONObject();
+            try {
+                object.put("img", img);
+                object.put("title", title);
+                object.put("price", price);
+                object.put("total", total);
+                if (Integer.parseInt(price) >= 1000) {
+                    object.put("time", dataset2.get(niceSpinner.getSelectedIndex()));
+                } else {
+                    if (title.contains("维修")) {
+                        object.put("time", dataset3.get(niceSpinner.getSelectedIndex()));
+                    } else if (title.contains("搬")) {
+                        object.put("time", dataset4.get(niceSpinner.getSelectedIndex()));
+                    } else if (title.contains("锁")) {
+                        object.put("time", dataset5.get(niceSpinner.getSelectedIndex()));
+                    } else {
+                        object.put("time", dataset.get(niceSpinner.getSelectedIndex()));
+                    }
+
+                }
+                object.put("time2", time);
+                object.put("name", etName.getText().toString().trim());
+                object.put("mobile", etMobile.getText().toString().trim());
+                object.put("address", et_address.getText().toString().trim());
+                list.put(object);
+                setOrder(getUsername(), list.toString());
+                System.out.println(list.toString());
+                new SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
+                        .setTitleText("下单成功！")
+                        .setConfirmText("查看订单")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                toActivity(OrderListActivity.class, null);
+                            }
+                        })
+                        .show();
+            } catch (Exception e) {
+            }
         }
     }
 
