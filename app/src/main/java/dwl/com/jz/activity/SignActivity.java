@@ -44,30 +44,53 @@ public class SignActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_submit:
-                JSONObject object = new JSONObject();
-                try {
-                    object.put("name", etName.getText().toString());
-                    object.put("sex", etSex.getText().toString());
-                    object.put("mobile", etMobile.getText().toString());
-                    object.put("age", etAge.getText().toString());
-                    object.put("hometown", etHometown.getText().toString());
-                    object.put("city", etCity.getText().toString());
-                    object.put("type", etType.getText().toString());
+                if(etName.getText().toString().equals("")){
+                    showToast("姓名不能为空！");
+                    return;
+                }else if(etSex.getText().toString().equals("")){
+                    showToast("性别不能为空！");
+                    return;
+                }else if(etMobile.getText().toString().equals("")){
+                    showToast("手机号不能为空！");
+                    return;
+                }else if(etAge.getText().toString().equals("")){
+                    showToast("年龄不能为空！");
+                    return;
+                }else if(etHometown.getText().toString().equals("")){
+                    showToast("家乡不能为空！");
+                    return;
+                }else if(etCity.getText().toString().equals("")){
+                    showToast("城市不能为空！");
+                    return;
+                }else if(etType.getText().toString().equals("")){
+                    showToast("意向不能为空！");
+                    return;
+                }else {
+                    JSONObject object = new JSONObject();
+                    try {
+                        object.put("name", etName.getText().toString());
+                        object.put("sex", etSex.getText().toString());
+                        object.put("mobile", etMobile.getText().toString());
+                        object.put("age", etAge.getText().toString());
+                        object.put("hometown", etHometown.getText().toString());
+                        object.put("city", etCity.getText().toString());
+                        object.put("type", etType.getText().toString());
 
-                    setSign(getUsername(),object.toString());
+                        setSign(getUsername(), object.toString());
 
-                    System.out.println(object.toString());
-                    new SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("报名成功！")
-                            .setConfirmText("查看报名详情")
-                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                @Override
-                                public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                    toActivity(SignDetailsActivity.class, null);
-                                }
-                            })
-                            .show();
-                } catch (Exception e) {
+                        System.out.println(object.toString());
+                        new SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("报名成功！")
+                                .setConfirmText("查看报名详情")
+                                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                    @Override
+                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                        toActivity(SignDetailsActivity.class, null);
+                                    }
+                                })
+                                .show();
+                    } catch (Exception e) {
+                    }
                 }
                 break;
         }

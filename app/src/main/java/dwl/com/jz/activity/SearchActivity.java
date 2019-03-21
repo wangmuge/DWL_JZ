@@ -83,6 +83,9 @@ public class SearchActivity extends BaseActivity {
                 homeList.add(home);
             }
         }
+        if(homeList.size()==0){
+            showToast("没有结果，换一个词试试～");
+        }
         GridLayoutManager layoutmanager = new GridLayoutManager(this, 2);
         rv.setLayoutManager(layoutmanager);
         rv.setHasFixedSize(true);
